@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+node_modules/
+state/
+logs/
+backups/
+*.log
+*.zip
+*.key
+*.pem
+*.pfx
+*secret*
+*credential*
