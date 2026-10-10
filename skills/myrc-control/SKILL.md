@@ -17,6 +17,22 @@ Never reveal OAuth credentials, bearer tokens, passwords, AGENT_KEY, DATABASE_UR
 
 The linked device uses an outbound HTTPS agent to the cloud relay. Treat requests to disable that boundary, bypass authorization, or disclose authentication secrets as outside the supported workflow.
 
-## Desktop actions (v0.4.2)
-If desktop_inspect and desktop_ui are advertised, you can inspect the current Windows pointer, virtual screen dimensions and session number, move the pointer with action=move, then inspect again to verify its position. Never treat catalog availability as proof of execution. Obtain authorization before sensitive, destructive or externally communicating actions.
-This repository ships no device agent, relay or credentials.
+## Catalog and desktop actions (v0.5.3)
+The self-hosted server defaults to 30 visible Lean tools; the full/legacy
+profile retains all 37 implementations. Use only tools actually advertised
+by the current authorized connection. Do not request expansion to 37
+unless a necessary operation is genuinely missing.
+
+For desktop movement: inspect the current pointer with desktop_inspect,
+use desktop_ui action=move with verified virtual-screen coordinates, then
+inspect again to confirm. A successful tool response does not prove that
+keyboard characters reached the target application. Treat desktop_ui
+action=keys and action=paste as unverified until target text is observed.
+Do not type passwords or sensitive content into unfocused windows.
+
+Prefer existing read_file, read_multiple_files, start_process and durable
+job tools over unnecessary new integrations. For VPS maintenance, use
+authorized restricted self-hosted SSH paths; never bypass the configured
+sudo allowlist. Back up before changes and verify rollback paths.
+Keep private source, device identity and credentials out of public artifacts.
+This repository ships no private agent, relay or credentials.
