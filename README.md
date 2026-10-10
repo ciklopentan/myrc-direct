@@ -1,12 +1,14 @@
 # MyRC Direct — public ChatGPT MCP integration
 
-This repository publishes the **integration metadata** for MyRC Direct v0.4.2: an MCP plugin manifest, an example server URL, an onboarding skill and icons.
+This repository publishes the **integration metadata** for MyRC Direct v0.5.3: an MCP plugin manifest, an example server URL, an onboarding skill and icons.
 
 **It does NOT contain the executable remote-access backend.** The OAuth relay, device agent, Windows desktop helper, wrapper, durable jobs, runtime configuration, secrets and real endpoint are private. This repository alone cannot control any computer.
 
-## Verified on 2026-10-09
+## Verified on 2026-10-10
 
-In the owner's authorized ChatGPT connection, 37 MCP tool names were discoverable. Three direct calls completed: desktop_inspect, desktop_ui with action=move, desktop_inspect. Both inspections matched the moved cursor location in Windows session 1. This confirms mouse movement only, not every available tool.
+In the owner's authorized private deployment, a live OAuth/PKCE and MCP end-to-end test passed: token refresh/replay safeguards, **30 default Lean tools**, file operations, processes, screenshots, file transfer and durable jobs. The **37 underlying implementations** remain available to the legacy/full profile; they are not all exposed in the default tools/list response.
+
+A direct MCP cursor inspect → move → inspect sequence verified mouse movement in Windows session 1. **Keyboard text entry is not verified** and must not be represented as working merely because a tool returns success. This repository is a safe metadata template, not the private runtime.
 
 ## Adaptation
 
